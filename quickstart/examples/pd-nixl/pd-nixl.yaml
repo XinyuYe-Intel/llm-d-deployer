@@ -1,8 +1,8 @@
 sampleApplication:
   baseConfigMapRefName: basic-gpu-with-nixl-preset
   model:
-    modelArtifactURI: hf://meta-llama/Llama-3.2-3B-Instruct
-    modelName: "meta-llama/Llama-3.2-3B-Instruct"
+    modelArtifactURI: hf://Qwen/Qwen3-8B
+    modelName: "Qwen/Qwen3-8B"
 redis:
   enabled: false
 modelservice:

@@ -74,6 +74,7 @@ data:
               image: {{ include "modelservice.vllmImage" . }}
               imagePullPolicy: {{ .Values.modelservice.vllm.image.imagePullPolicy }}
               securityContext:
+                privileged: true
                 capabilities:
                   drop:
                     - MKNOD
@@ -210,6 +211,7 @@ data:
               imagePullPolicy: {{ .Values.modelservice.vllm.image.imagePullPolicy }}
               {{- if .Values.modelservice.prefill.vllm.containerSecurityContext }}
               securityContext:
+                privileged: true
                 {{- include "common.tplvalues.render" ( dict "value" .Values.modelservice.prefill.vllm.containerSecurityContext "context" $) | nindent 16 }}
               {{- end }}
               command:
